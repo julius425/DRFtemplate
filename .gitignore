@@ -1,0 +1,16 @@
+__pycache__
+.pytest_cache
+*.pyc
+.vscode
+.idea
+venv
+.env.local
+.env
+postgres-data/
+redis-data/
+logs/
+static/
+media/
+*.crt
+*.key
+celerybeat-schedule
