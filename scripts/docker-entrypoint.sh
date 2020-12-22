@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# scriptfile used to make `predocker` actions
 
 echo "Collect static files"
 python manage.py collectstatic --noinput

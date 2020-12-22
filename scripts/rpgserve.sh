@@ -1,6 +1,7 @@
 #! /bin/sh -
 
-# idiomatic parameter and option handling in sh
+# used to start\stop PG and Redis services
+# when switching to docker dev server localy
 
 case "$1" in
     start)
