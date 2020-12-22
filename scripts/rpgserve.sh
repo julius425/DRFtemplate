@@ -3,11 +3,11 @@
 # idiomatic parameter and option handling in sh
 
 case "$1" in
-    --start)
+    start)
         service postgresql start
         service redis start
         ;;
-    --stop)
+    stop)
         service postgresql stop
         service redis stop
         ;;

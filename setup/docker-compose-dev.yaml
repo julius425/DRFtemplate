@@ -4,13 +4,13 @@ services:
   db:
     image: postgres:12
     restart: always
-    env_file: .env
+    env_file: ../.env
     sysctls:
       net.core.somaxconn: 65535
     environment:
       PGDATA: '/var/lib/postgres/data'
     volumes:
-      - ./postgres-data:/var/lib/postgres/data
+      - ../postgres-data:/var/lib/postgres/data
     ports:
       - "5432:5432"
 
@@ -22,24 +22,25 @@ services:
     ports:
       - '6379:6379'
     volumes:
-      - ./redis-data:/var/lib/redis:rw
+      - ../redis-data:/var/lib/redis:rw
     command: redis-server --requirepass MyRedisPasswordVeryStrong
 
   app:
     build:
-      context: .
+      context: ..
+      dockerfile: develop.dockerfile
     restart: always
     sysctls:
       net.core.somaxconn: 65535
     ports:
       - "8000:8000"
     volumes:
-      - ./src:/app/src
-      - ./uwsgi:/etc/uwsgi
-      - ./media:/app/media
-      - ./static:/app/static
-      - ./logs:/app/logs
-    env_file: .env
+      - ../src:/app/src
+      - ../uwsgi:/etc/uwsgi
+      - ../media:/app/media
+      - ../static:/app/static
+      - ../logs:/app/logs
+    env_file: ../.env
     command: uwsgi --ini /etc/uwsgi/emperor.ini
     depends_on:
       - db
@@ -60,11 +61,11 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/project.conf:/etc/nginx/conf.d/project.conf
-      - ./nginx/certs/selfsigned.crt:/etc/nginx/selfsigned.crt
-      - ./nginx/certs/selfsigned.key:/etc/nginx/selfsigned.key
-      - ./media:/var/www/media
-      - ./static:/var/www/static
-      - ./logs:/var/log/nginx
+      - ../nginx/project.conf:/etc/nginx/conf.d/project.conf
+      - ../nginx/certs/selfsigned.crt:/etc/nginx/selfsigned.crt
+      - ../nginx/certs/selfsigned.key:/etc/nginx/selfsigned.key
+      - ../media:/var/www/media
+      - ../static:/var/www/static
+      - ../logs:/var/log/nginx
     links:
       - app

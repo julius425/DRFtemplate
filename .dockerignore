@@ -1,0 +1,15 @@
+# IDE Fragments
+/.vscode
+*.idea*
+
+# Pytest cache files
+.pytest_cache/
+
+# Pytest cache files
+.mypy_cache/
+
+# Python cache directories
+__pycache__/
+
+# Ignore Files
+.gitignore
