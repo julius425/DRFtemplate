@@ -1,11 +1,21 @@
-Django REST project template
+## Django REST project template
 
-swagger, 
-docker, 
-nginx, 
-uwsgi, 
-postgres, 
-celery, 
-redis, 
-pytest, 
-logging
+### Template features
+* jwt-auth
+* swagger
+* logging
+
+### Task queue
+* celery, redis
+
+### Development
+* pytest
+* django-extensions
+
+### Deploy
+* docker 
+* nginx
+* uwsgi
+
+### Database
+* postgres
