@@ -16,7 +16,7 @@ from pathlib import Path
 import dotenv
 
 BASE_DIR = pathlib.Path(__file__).resolve().parents[2]
-ENV_FILE = str(BASE_DIR / '.env')
+ENV_FILE = str(BASE_DIR / 'env-local.env')
 dotenv.load_dotenv(ENV_FILE)
 
 

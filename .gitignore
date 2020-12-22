@@ -4,8 +4,10 @@ __pycache__
 .vscode
 .idea
 venv
-.env.local
 .env
+env-develop.env
+env-production.env
+env-local.env
 postgres-data/
 redis-data/
 logs/
