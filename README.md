@@ -13,6 +13,7 @@ requires .env file in root directory
 ### Development
 * pytest
 * django-extensions
+* pgadmin 
 
 ### Deploy
 * docker 
