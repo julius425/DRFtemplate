@@ -28,7 +28,7 @@ services:
   app:
     build:
       context: ..
-      dockerfile: develop.dockerfile
+      dockerfile: docker.develop
     restart: always
     sysctls:
       net.core.somaxconn: 65535
